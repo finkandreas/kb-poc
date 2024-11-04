@@ -110,7 +110,7 @@ icon-wcp/v1:latest                      gh200 2024-03-11 3e8f96370a4685a7 8.3GB
 
 ### Accessing restricted software
 
-By default, uenv can be freely pulled by all users on a system, with no restrictions.
+By default, uenv can be pulled by all users on a system, with no restrictions.
 
 Some uenv are not available to all users, for exampl the vasp  images are only available for users who have a VASP license, who are added to the vasp6  group once then have provided CSCS with a copy of their license.
 
