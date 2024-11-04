@@ -11,7 +11,7 @@ nav:
     - 'uenv': build-install/uenv.md
 theme:
   name: material
-  custom_dir: docs/.overrides
+  #custom_dir: docs/.overrides
   features:
     - content.code.copy
     - navigation.indexes
