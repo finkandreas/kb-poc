@@ -3,12 +3,16 @@ site_name: CSCS Knowledge Base
 #site_url: https://bcumming.github.io
 nav:
   - Home: index.md
-  - Getting Started: getting-started/index.md
-  - Alps Systems and Platforms: alps-systems/index.md
-  - 'Building and Installing Software':
-    #- 'Building and Installing Software': building-installing/index.md
+  - Getting started: getting-started/index.md
+  - Alps systems and platforms: alps-systems/index.md
+  - 'Building and installing software':
     - build-install/index.md
     - 'uenv': build-install/uenv.md
+    - 'Cray Programming Environment (CPE)': build-install/cray-programming-environment.md
+  - 'Frequently asked questions':
+    - faq/index.md
+    - Developers:
+      - faq/developers/index.md
 theme:
   name: material
   #custom_dir: docs/.overrides
