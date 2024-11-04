@@ -9,7 +9,7 @@ Ease of deployment:
     * can we have a link to the markdown directly on each page
 * easy to preview your changes before deploying them
     * currently the only way to do this is to build the docs locally and view them
-    * support for preview pages is "under development" https://github.com/orgs/community/discussions/7730
+    * support for preview pages is [under development](https://github.com/orgs/community/discussions/7730)
 * easy to deploy straight away for small changes
 * easy to request a review
 
