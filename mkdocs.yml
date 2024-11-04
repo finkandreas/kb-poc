@@ -7,13 +7,13 @@ nav:
   - Alps Systems and Platforms: alps-systems/index.md
   - 'Building and Installing Software':
     #- 'Building and Installing Software': building-installing/index.md
-    - building-installing/index.md
-    - 'uenv': building-installing/uenv.md
+    - build-install/index.md
+    - 'uenv': build-install/uenv.md
 theme:
   name: material
+  custom_dir: docs/.overrides
   features:
     - content.code.copy
-    - navigation.tabs
     - navigation.indexes
   palette:
     primary: white
@@ -29,11 +29,16 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
   - tables
   - toc:
       permalink: true
+  - attr_list
+  - md_in_html
 extra_css:
   - stylesheets/extra.css
 # TODO: uncomment this to provide a link to the docs in top RHS corner
