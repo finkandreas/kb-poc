@@ -1,0 +1,40 @@
+site_name: CSCS Knowledge Base
+# TODO: change to match target deployment
+#site_url: https://bcumming.github.io
+nav:
+  - Home: index.md
+  - Getting Started: getting-started/index.md
+  - Alps Systems and Platforms: alps-systems/index.md
+  - 'Building and Installing Software':
+    #- 'Building and Installing Software': building-installing/index.md
+    - building-installing/index.md
+    - 'uenv': building-installing/uenv.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.indexes
+  palette:
+    primary: white
+    accent: red
+  logo: assets/cscs-logo.png
+markdown_extensions:
+  - admonition
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+extra_css:
+  - stylesheets/extra.css
+# TODO: uncomment this to provide a link to the docs in top RHS corner
+#repo_url: https://github.com/bcumming/kb-poc
