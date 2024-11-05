@@ -4,11 +4,14 @@ site_name: CSCS Knowledge Base
 nav:
   - Home: index.md
   - Getting started: getting-started/index.md
-  - Alps systems and platforms: alps-systems/index.md
+  - Alps systems and platforms:
+    - alps-systems/index.md
+    - 'todi': alps-systems/todi.md
   - 'Building and installing software':
     - build-install/index.md
     - 'uenv': build-install/uenv.md
-    - 'Cray Programming Environment (CPE)': build-install/cray-programming-environment.md
+    - 'Cray Programming Environment (CPE)': build-install/cpe.md
+    - 'Python with pip': build-install/pip.md
   - 'Frequently asked questions':
     - faq/index.md
     - Developers:
