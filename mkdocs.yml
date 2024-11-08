@@ -1,6 +1,6 @@
 site_name: CSCS Knowledge Base
 # TODO: change to match target deployment
-#site_url: https://bcumming.github.io
+site_url: http://localhost:8081/43
 nav:
   - Home: index.md
   - Getting started: getting-started/index.md

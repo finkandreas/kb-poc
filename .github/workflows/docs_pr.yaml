@@ -1,0 +1,28 @@
+name: build docs
+
+on:
+  pull_request:
+    branches: ['main']
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          echo "${{ github.ref_name }}"
+          ls -alh
+      - run: |
+          if [[ -n ${{ secrets.UPLOAD_TOKEN }} ; then
+            echo "secrets.UPLOAD_TOKEN is non-empty"
+          else
+            echo "secrets.UPLOAD_TOKEN is empty"
+      - env:
+          MY_SECRET: ${{ secrets.UPLOAD_TOKEN }}
+        run: |
+          if [[ -n "$MY_SECRET" ]] ; then
+            echo "MY_SECRET is non-empty"
+          else
+            echo "MY_SECRET is empty"
+  #sed -i -e 's|^#\?site_url:.*|site_url: http://localhost:8081/43|' mkdocs.yml
