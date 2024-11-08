@@ -14,10 +14,11 @@ jobs:
           echo "${{ github.ref_name }}"
           ls -alh
       - run: |
-          if [[ -n ${{ secrets.UPLOAD_TOKEN }} ; then
+          if [[ -n "${{ secrets.UPLOAD_TOKEN }}" ]] ; then
             echo "secrets.UPLOAD_TOKEN is non-empty"
           else
             echo "secrets.UPLOAD_TOKEN is empty"
+          fi
       - env:
           MY_SECRET: ${{ secrets.UPLOAD_TOKEN }}
         run: |
@@ -25,4 +26,5 @@ jobs:
             echo "MY_SECRET is non-empty"
           else
             echo "MY_SECRET is empty"
+          fi
   #sed -i -e 's|^#\?site_url:.*|site_url: http://localhost:8081/43|' mkdocs.yml
