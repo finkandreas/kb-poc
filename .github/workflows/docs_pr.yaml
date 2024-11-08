@@ -8,7 +8,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -25,12 +24,12 @@ jobs:
       - run: |
           pip install -r requirements.txt
       - run: rm -rf site
-      - run: sed -i -e 's|^#\?site_url:.*|site_url: https://docs-kb.tds.cscs.ch/${{ github.event.pull_request.number }}|' mkdocs.yml
+      - run: "sed -i -e 's|^#\\?site_url:.*|site_url: https://docs-kb.tds.cscs.ch/${{ github.event.pull_request.number }}|' mkdocs.yml"
       - run: cat mkdocs.yml
       - run: mkdocs build
       - run: |
           mkdir upload
-          env --chdir=site tar -czf ../upload/site.tar.gz
+          env --chdir=site tar -czf ../upload/site.tar.gz .
           echo ${{ github.event.pull_request.number }} > upload/pr_number.txt
       - name: Upload docs
         uses: actions/upload-artifact@v4
