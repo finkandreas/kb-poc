@@ -1,4 +1,4 @@
-# Todi
+# Todi - Not a wombat
 
 Todi is the first early access system with Grace-Hopper (GH200) nodes on Alps that is opened to the CSCS user community.
 To access the system projects need to have applied for special access.
