@@ -1,17 +1,20 @@
-name: build docs (PR)
+name: Upload docs
+Linux CI (Coverage upload)
 
 on:
-  pull_request:
-    branches: ['main']
-permissions:
-  contents: write
+  workflow_run:
+    workflows: ["build docs (PR)"]
+    types:
+      - completed
+
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: |
           echo "${{ github.ref_name }}"
+          echo "${{ github }}"
           ls -alh
       - run: |
           if [[ -n "${{ secrets.UPLOAD_TOKEN }}" ]] ; then
@@ -27,4 +30,3 @@ jobs:
           else
             echo "MY_SECRET is empty"
           fi
-  #sed -i -e 's|^#\?site_url:.*|site_url: http://localhost:8081/43|' mkdocs.yml
