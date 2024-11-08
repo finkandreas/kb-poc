@@ -29,7 +29,7 @@ jobs:
       - run: mkdocs build
       - run: |
           mkdir upload
-          env --chdir=site tar -czf ../upload/site.tar.gz
+          env --chdir=site tar -czf ../upload/site.tar.gz .
           echo ${{ github.event.pull_request.number }} > upload/pr_number.txt
       - name: Upload docs
         uses: actions/upload-artifact@v4
