@@ -1,5 +1,4 @@
 name: Upload docs
-Linux CI (Coverage upload)
 
 on:
   workflow_run:
