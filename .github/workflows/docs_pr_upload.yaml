@@ -10,22 +10,18 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: |
-          echo "${{ github.ref_name }}"
-          echo "${{ github }}"
-          ls -alh
-      - run: |
-          if [[ -n "${{ secrets.UPLOAD_TOKEN }}" ]] ; then
-            echo "secrets.UPLOAD_TOKEN is non-empty"
-          else
-            echo "secrets.UPLOAD_TOKEN is empty"
-          fi
-      - env:
-          MY_SECRET: ${{ secrets.UPLOAD_TOKEN }}
+      - name: Upload docs from GH artifacts
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          name: docs
+          workflow: docs_pr.yaml
+          allow_forks: true
+          workflow_conclusion: success
+      - name: Upload coverage report
+        shell: bash
         run: |
-          if [[ -n "$MY_SECRET" ]] ; then
-            echo "MY_SECRET is non-empty"
-          else
-            echo "MY_SECRET is empty"
-          fi
+            ls -alh
+            cat upload/pr_number.txt
+            PR_NBR=$(cat upload/pr_number.txt)
+            curl --data-binary @upload/site.tar.gz -H "Authorization: Bearer ${{ secrets.UPLOAD_TOKEN }}" https://docs-kb.tds.cscs.ch/upload?path=$PR_NBR
