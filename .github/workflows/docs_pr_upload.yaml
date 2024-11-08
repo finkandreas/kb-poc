@@ -22,6 +22,5 @@ jobs:
         shell: bash
         run: |
             ls -alh
-            cat upload/pr_number.txt
-            PR_NBR=$(cat upload/pr_number.txt)
-            curl --data-binary @upload/site.tar.gz -H "Authorization: Bearer ${{ secrets.UPLOAD_TOKEN }}" https://docs-kb.tds.cscs.ch/upload?path=$PR_NBR
+            PR_NBR=$(cat pr_number.txt)
+            curl --data-binary @site.tar.gz -H "Authorization: Bearer ${{ secrets.UPLOAD_TOKEN }}" https://docs-kb.tds.cscs.ch/upload?path=$PR_NBR
