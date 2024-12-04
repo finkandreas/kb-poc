@@ -171,7 +171,7 @@ The workflow for an individual to update the documentation would like like the f
     - there is no way to integrate those docs into our confluence KB
 - features like indexes at the top of each page can't be accidentally deleted or modified by writers
 - internal comments are kept in Confluence, if a page is moved (from TDS to KB) instead of copied - this looks unprofessional
-- propose changes by engineers outside of their main activity area because they think claritify in the documentation is missing, and the knowledgeable engineers can refine on the proposals without interfering with the live documentation
+- propose changes by engineers outside of their main activity area because they think clarity in the documentation is missing, and the knowledgeable engineers can refine on the proposals without interfering with the live documentation
 - limited features in markdown ensure that documentation will look consistent, e.g. bullet points will all look the same across pages, code boxes will have the same style, enforced table of contents for each page, headings same style across pages, etc.
 
 **Cons**:
